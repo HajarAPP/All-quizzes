@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   build-apk:
@@ -30,16 +30,18 @@ jobs:
       - name: 🔍 Flutter version
         run: flutter --version
 
-      - name: 📦 Install dependencies
-        run: flutter pub get
-
+      # CRITICAL: local.properties must exist BEFORE pub get and build
       - name: 📝 Write local.properties
         run: |
-          echo "flutter.sdk=$FLUTTER_ROOT" >> android/local.properties
+          echo "flutter.sdk=$(which flutter | xargs dirname | xargs dirname)" > android/local.properties
           echo "sdk.dir=$ANDROID_SDK_ROOT" >> android/local.properties
+          cat android/local.properties
 
       - name: 🔧 Make Gradle wrapper executable
         run: chmod +x android/gradlew
+
+      - name: 📦 Install dependencies
+        run: flutter pub get
 
       - name: 🏗️ Build Release APK
         run: flutter build apk --release --no-tree-shake-icons

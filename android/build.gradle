@@ -1,6 +1,3 @@
-// Root build.gradle — plugin versions are now declared in settings.gradle.
-// This file only configures shared repository resolution for all subprojects.
-
 allprojects {
     repositories {
         google()

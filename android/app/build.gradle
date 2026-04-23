@@ -1,14 +1,12 @@
 plugins {
     id "com.android.application"
     id "org.jetbrains.kotlin.android"
-    // Flutter Gradle Plugin — must come after Android + Kotlin plugins.
-    // Version and classpath are resolved via settings.gradle pluginManagement.
     id "dev.flutter.flutter-gradle-plugin"
 }
 
 android {
     namespace "com.hajarapp.vibevault"
-    compileSdk 35
+    compileSdk 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -22,9 +20,8 @@ android {
 
     defaultConfig {
         applicationId "com.hajarapp.vibevault"
-        // minSdk 21 = 99%+ device coverage; required by google_mobile_ads
         minSdk 21
-        targetSdk 35
+        targetSdk 34
         versionCode 2
         versionName "1.0.1"
         multiDexEnabled true
@@ -32,7 +29,6 @@ android {
 
     buildTypes {
         release {
-            // Using debug signing for CI. Add a real keystore for Play Store uploads.
             signingConfig signingConfigs.debug
             minifyEnabled false
             shrinkResources false
@@ -45,6 +41,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23"
     implementation "androidx.multidex:multidex:2.0.1"
 }
