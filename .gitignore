@@ -1,0 +1,19 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+
+# Android generated files — do NOT commit
+android/local.properties
+android/.gradle/
+android/app/.cxx/
+*.class
+*.apk
+*.aab
+
+# IDE
+.idea/
+*.iml
+.vscode/
