@@ -1,0 +1,427 @@
+{
+  "version": "1.0.0",
+  "title": "CompTIA Security+ SY0-701",
+  "questions": [
+
+    {
+      "id": "sy0701_001",
+      "question": "A security analyst discovers unauthorized outbound traffic on port 443. Which technique is the attacker MOST likely using?",
+      "options": [
+        "DNS tunneling",
+        "SSL/TLS traffic exfiltration",
+        "ARP poisoning",
+        "ICMP flooding"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_002",
+      "question": "Which attack uses precomputed hash values to crack password hashes quickly?",
+      "options": [
+        "Brute force",
+        "Dictionary attack",
+        "Rainbow table",
+        "Pass-the-hash"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_003",
+      "question": "An organization wants the STRONGEST authentication for its enterprise Wi-Fi. Which should they implement?",
+      "options": [
+        "WEP with a complex key",
+        "WPA2-Personal (PSK)",
+        "WPA3-Enterprise with 802.1X",
+        "Hiding the SSID"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_004",
+      "question": "A user receives an email appearing to be from their bank CEO, requesting an urgent wire transfer. Which attack is this?",
+      "options": [
+        "Spear phishing",
+        "Vishing",
+        "Smishing",
+        "Whaling"
+      ],
+      "correctAnswerIndex": 3,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_005",
+      "question": "Which cryptographic concept ensures a sender cannot deny sending a message?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Non-repudiation",
+        "Availability"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_006",
+      "question": "What type of malware encrypts files and demands payment for the decryption key?",
+      "options": [
+        "Trojan",
+        "Ransomware",
+        "Spyware",
+        "Rootkit"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_007",
+      "question": "Which framework is BEST used for mapping threat actor tactics, techniques, and procedures (TTPs)?",
+      "options": [
+        "NIST CSF",
+        "MITRE ATT&CK",
+        "ISO 27001",
+        "CIS Controls"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_008",
+      "question": "An attacker intercepts traffic between a user and a web server and modifies data in transit. This is BEST described as:",
+      "options": [
+        "Replay attack",
+        "Session hijacking",
+        "On-path (MITM) attack",
+        "SQL injection"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_009",
+      "question": "Which protocol provides secure remote access to network devices using asymmetric key exchange?",
+      "options": [
+        "Telnet",
+        "SSH",
+        "RDP",
+        "FTP"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_010",
+      "question": "A penetration tester has NO prior knowledge of the target system. Which test type is this?",
+      "options": [
+        "White-box test",
+        "Gray-box test",
+        "Black-box test",
+        "Crystal-box test"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_011",
+      "question": "Which concept ensures data is accessible when needed by authorized users?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Availability",
+        "Non-repudiation"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_012",
+      "question": "What is the primary purpose of a WAF (Web Application Firewall)?",
+      "options": [
+        "Block DDoS attacks at the network layer",
+        "Inspect and filter HTTP/HTTPS traffic to protect web applications",
+        "Encrypt data between users and the server",
+        "Monitor DNS queries for anomalies"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_013",
+      "question": "Which type of authentication requires something you know, something you have, AND something you are?",
+      "options": [
+        "Two-factor authentication (2FA)",
+        "Multi-factor authentication (MFA)",
+        "Single sign-on (SSO)",
+        "Federated identity"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_014",
+      "question": "A forensic analyst discovers log files have been altered after a breach. Which security principle was violated?",
+      "options": [
+        "Confidentiality",
+        "Availability",
+        "Integrity",
+        "Accountability"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_015",
+      "question": "Which vulnerability scanning approach tests from inside the network with valid credentials?",
+      "options": [
+        "External unauthenticated scan",
+        "Passive scan",
+        "Credentialed (authenticated) scan",
+        "Blind scan"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_016",
+      "question": "Which attack floods a server with SYN packets but never completes the TCP handshake?",
+      "options": [
+        "Ping of death",
+        "Smurf attack",
+        "SYN flood",
+        "UDP flood"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_017",
+      "question": "What does the principle of LEAST PRIVILEGE mean?",
+      "options": [
+        "Users get maximum access to improve productivity",
+        "Users are granted only the minimum permissions needed to perform their job",
+        "Administrators share one root account",
+        "Access is reviewed once per year"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_018",
+      "question": "Which encryption algorithm uses a single shared key for both encryption and decryption?",
+      "options": [
+        "RSA",
+        "ECC",
+        "AES",
+        "Diffie-Hellman"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_019",
+      "question": "An employee plugs in a USB drive found in the parking lot. The organization's PC is then compromised. Which attack vector was used?",
+      "options": [
+        "Spear phishing",
+        "Baiting (social engineering)",
+        "Watering hole attack",
+        "Tailgating"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_020",
+      "question": "Which security control type is a CCTV camera?",
+      "options": [
+        "Preventive",
+        "Detective",
+        "Corrective",
+        "Deterrent"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_021",
+      "question": "Which protocol is used to securely distribute encryption keys without prior shared secrets?",
+      "options": [
+        "AES",
+        "SHA-256",
+        "Diffie-Hellman",
+        "HMAC"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "hard"
+    },
+
+    {
+      "id": "sy0701_022",
+      "question": "A company's disaster recovery plan specifies a maximum of 4 hours to restore operations. This is the:",
+      "options": [
+        "Recovery Point Objective (RPO)",
+        "Recovery Time Objective (RTO)",
+        "Mean Time to Repair (MTTR)",
+        "Business Impact Analysis (BIA)"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_023",
+      "question": "Which type of DNS attack redirects users to a malicious IP by poisoning the DNS cache?",
+      "options": [
+        "DNS amplification",
+        "DNS spoofing (cache poisoning)",
+        "DNS tunneling",
+        "DNS hijacking"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "hard"
+    },
+
+    {
+      "id": "sy0701_024",
+      "question": "Which security technology monitors network traffic in real-time and can BLOCK malicious traffic automatically?",
+      "options": [
+        "IDS",
+        "SIEM",
+        "IPS",
+        "SOAR"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_025",
+      "question": "What is the purpose of a Certificate Authority (CA) in a PKI?",
+      "options": [
+        "Encrypt all web traffic",
+        "Issue and sign digital certificates to verify identities",
+        "Store private keys securely",
+        "Manage firewall rules"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_026",
+      "question": "An attacker registers a domain similar to a legitimate site (e.g., 'paypa1.com'). This is called:",
+      "options": [
+        "Typosquatting",
+        "Domain hijacking",
+        "Vishing",
+        "Pretexting"
+      ],
+      "correctAnswerIndex": 0,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_027",
+      "question": "Which hashing algorithm is considered MOST secure for password storage?",
+      "options": [
+        "MD5",
+        "SHA-1",
+        "SHA-256",
+        "bcrypt"
+      ],
+      "correctAnswerIndex": 3,
+      "category": "Security+",
+      "difficulty": "hard"
+    },
+
+    {
+      "id": "sy0701_028",
+      "question": "Which regulation governs the protection of personal data for EU citizens?",
+      "options": [
+        "HIPAA",
+        "PCI-DSS",
+        "GDPR",
+        "SOX"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "easy"
+    },
+
+    {
+      "id": "sy0701_029",
+      "question": "A zero-day vulnerability is BEST described as:",
+      "options": [
+        "A vulnerability that has been patched but not deployed",
+        "A vulnerability with a known exploit that has no available patch",
+        "A vulnerability discovered by the vendor before attackers",
+        "An expired TLS certificate"
+      ],
+      "correctAnswerIndex": 1,
+      "category": "Security+",
+      "difficulty": "medium"
+    },
+
+    {
+      "id": "sy0701_030",
+      "question": "Which access control model grants or denies access based on rules defined by a central authority (e.g., government clearances)?",
+      "options": [
+        "Discretionary Access Control (DAC)",
+        "Role-Based Access Control (RBAC)",
+        "Mandatory Access Control (MAC)",
+        "Attribute-Based Access Control (ABAC)"
+      ],
+      "correctAnswerIndex": 2,
+      "category": "Security+",
+      "difficulty": "hard"
+    }
+
+  ]
+}

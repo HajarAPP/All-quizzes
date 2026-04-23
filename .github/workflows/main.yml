@@ -1,0 +1,44 @@
+name: 🏗️ Build & Upload SecurityPlus APK
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # allows manual trigger from GitHub UI
+
+jobs:
+  build-apk:
+    name: Build Release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: ☕ Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: 🐦 Set up Flutter (stable)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: 🔍 Flutter version
+        run: flutter --version
+
+      - name: 📦 Install dependencies
+        run: flutter pub get
+
+      - name: 🏗️ Build Release APK
+        run: flutter build apk --release --no-tree-shake-icons
+
+      - name: 📤 Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SecurityPlus-Release-APK
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
