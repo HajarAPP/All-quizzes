@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace "com.hajarapp.vibevault"
+    namespace "com.hajarapp.all_quizzes"
     compileSdk 34
     ndkVersion flutter.ndkVersion
 
@@ -19,7 +19,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.hajarapp.vibevault"
+        applicationId "com.hajarapp.all_quizzes"
         minSdk 21
         targetSdk 34
         versionCode 2

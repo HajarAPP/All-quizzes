@@ -1,3 +1,6 @@
+// Root-level build.gradle
+// Plugin versions are declared in settings.gradle via the plugins {} block.
+
 allprojects {
     repositories {
         google()
@@ -10,6 +13,30 @@ rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
     project.evaluationDependsOn(":app")
+
+    // =========================================================================
+    // FIX: Force namespace on old library plugins (e.g. nb_utils 6.1.x)
+    // that don't declare one. AGP 8+ requires every module to have a namespace.
+    // We read it from each library's AndroidManifest.xml <package> attribute.
+    // =========================================================================
+    afterEvaluate { project ->
+        if (project.plugins.hasPlugin("com.android.library")) {
+            project.android {
+                if (namespace == null || namespace.isEmpty()) {
+                    def manifest = file("${project.projectDir}/src/main/AndroidManifest.xml")
+                    if (manifest.exists()) {
+                        def pkg = new XmlSlurper().parse(manifest).@package.toString()
+                        if (pkg) {
+                            namespace pkg
+                        }
+                    }
+                }
+                if (compileSdk == null || compileSdk < 34) {
+                    compileSdk 34
+                }
+            }
+        }
+    }
 }
 
 tasks.register("clean", Delete) {
