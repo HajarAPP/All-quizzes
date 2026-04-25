@@ -46,9 +46,24 @@ jobs:
         run: flutter pub get
 
       - name: 🏗️ Build Release APK
-        run: flutter build apk --release --no-tree-shake-icons
+        run: |
+          set -o pipefail
+          flutter build apk --release --no-tree-shake-icons 2>&1 | tee build_output.log
+          BUILD_EXIT=$?
+          echo "BUILD_EXIT_CODE=$BUILD_EXIT" >> $GITHUB_ENV
+          exit $BUILD_EXIT
+
+      - name: 📋 Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build_output.log
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: 📤 Upload APK Artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: SecurityPlus-Release-APK
