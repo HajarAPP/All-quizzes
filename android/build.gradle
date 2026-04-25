@@ -9,14 +9,16 @@ rootProject.buildDir = "../build"
 
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-    project.evaluationDependsOn(":app")
+}
 
-    afterEvaluate {
-        if (it.hasProperty("android")) {
-            it.android {
-                if (namespace == null) {
-                    namespace it.group.toString()
-                }
+// Force namespace on old plugins (nb_utils, etc.) that don't define one.
+// This MUST be a separate block from the one with evaluationDependsOn
+// to avoid "Cannot run afterEvaluate when project is already evaluated".
+subprojects {
+    plugins.withType(com.android.build.gradle.LibraryPlugin) {
+        android {
+            if (namespace == null) {
+                namespace project.group.toString()
             }
         }
     }
