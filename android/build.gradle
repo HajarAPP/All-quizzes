@@ -10,24 +10,12 @@ rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
     project.evaluationDependsOn(":app")
-}
 
-// =============================================================================
-// FIX for "Namespace not specified" on old plugins (nb_utils, etc.)
-// AGP 8+ requires every Android library module to declare a namespace.
-// Old plugins only had the package attribute in AndroidManifest.xml.
-// This block auto-injects project.group as the namespace for any module
-// that doesn't define one.
-// =============================================================================
-subprojects { sub ->
-    sub.afterEvaluate {
-        if (sub.hasProperty("android")) {
-            sub.android {
+    afterEvaluate {
+        if (it.hasProperty("android")) {
+            it.android {
                 if (namespace == null) {
-                    def grp = sub.group.toString()
-                    if (grp != null && !grp.isEmpty()) {
-                        namespace grp
-                    }
+                    namespace it.group.toString()
                 }
             }
         }
