@@ -3,6 +3,7 @@ import 'package:quiz/Screens/quiz_details.dart';
 import 'package:quiz/model/quiz_models.dart';
 import 'package:quiz/utils/app_widget.dart';
 import 'package:quiz/utils/quiz_colors.dart';
+import 'package:quiz/utils/quiz_constant.dart';
 import 'package:quiz/utils/quiz_data_generator.dart';
 import 'package:quiz/utils/quiz_strings.dart';
 import 'package:quiz/utils/quiz_widget.dart';

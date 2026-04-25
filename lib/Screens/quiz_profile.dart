@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/utils/app_widget.dart';
 import 'package:quiz/utils/quiz_colors.dart';
+import 'package:quiz/utils/quiz_constant.dart';
 import 'package:quiz/utils/quiz_strings.dart';
 
 class QuizProfile extends StatefulWidget {
