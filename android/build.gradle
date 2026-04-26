@@ -20,10 +20,6 @@ subprojects {
                 }
                 compileSdk 35
 
-                defaultConfig {
-                    targetSdkVersion 35
-                }
-
                 compileOptions {
                     sourceCompatibility JavaVersion.VERSION_17
                     targetCompatibility JavaVersion.VERSION_17
@@ -34,7 +30,6 @@ subprojects {
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
-            freeCompilerArgs += ["-Xno-call-assertions", "-Xno-param-assertions"]
             jvmTarget = "17"
         }
     }
