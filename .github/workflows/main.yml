@@ -48,8 +48,11 @@ jobs:
           flutter pub cache repair
           flutter pub get
 
+      - name: 📦 Upgrade dependencies
+        run: flutter pub upgrade
+
       - name: 🏗️ Build APK with Ignore Flags
-        run: flutter build apk --release --no-tree-shake-icons --ignore-deprecation --no-pub
+        run: flutter build apk --release --no-tree-shake-icons --ignore-deprecation
 
       - name: 📋 Upload build log
         if: always()

@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace "com.hajarapp.all_quizzes"
-    compileSdk 35
+    compileSdk 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -21,7 +21,7 @@ android {
     defaultConfig {
         applicationId "com.hajarapp.all_quizzes"
         minSdk 21
-        targetSdk 35
+        targetSdk 34
         versionCode 2
         versionName "1.0.1"
         multiDexEnabled true
@@ -42,6 +42,4 @@ flutter {
 
 dependencies {
     implementation "androidx.multidex:multidex:2.0.1"
-    implementation "androidx.core:core-ktx:1.15.0"
-    implementation "androidx.browser:browser:1.8.0"
 }
