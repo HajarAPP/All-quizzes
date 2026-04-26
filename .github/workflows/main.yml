@@ -42,13 +42,16 @@ jobs:
       - name: 🔧 Make Gradle wrapper executable
         run: chmod +x android/gradlew
 
+      - name: 🧹 Clean previous builds
+        run: flutter clean
+
       - name: 📦 Install dependencies
         run: flutter pub get
 
       - name: 🏗️ Build Release APK
         run: |
           set -o pipefail
-          flutter build apk --release --no-tree-shake-icons 2>&1 | tee build_output.log
+          flutter build apk --release --no-tree-shake-icons --ignore-deprecation 2>&1 | tee build_output.log
           BUILD_EXIT=$?
           echo "BUILD_EXIT_CODE=$BUILD_EXIT" >> $GITHUB_ENV
           exit $BUILD_EXIT

@@ -9,15 +9,14 @@ rootProject.buildDir = "../build"
 
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
 
-// Force namespace on old plugins (nb_utils, etc.) that don't define one.
-subprojects {
+    // ── Force Java 17 + namespace on EVERY Android library (nb_utils, etc.) ──
     plugins.withType(com.android.build.gradle.LibraryPlugin) {
         android {
-            if (namespace == null) {
-                namespace project.group.toString()
+            if (namespace == null || namespace.isEmpty()) {
+                namespace project.group ?: project.name.replace("-", ".")
             }
+            compileSdk 34
             compileOptions {
                 sourceCompatibility JavaVersion.VERSION_17
                 targetCompatibility JavaVersion.VERSION_17
@@ -25,24 +24,33 @@ subprojects {
         }
     }
 
-    // Force ALL Java compile tasks to Java 17
+    plugins.withType(com.android.build.gradle.AppPlugin) {
+        android {
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_17
+                targetCompatibility JavaVersion.VERSION_17
+            }
+        }
+    }
+
+    // ── Force ALL Java compile tasks to Java 17 ──
     tasks.withType(JavaCompile).configureEach {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    // Force ALL Kotlin compile tasks to JVM 17
+    // ── Force ALL Kotlin compile tasks to JVM 17 ──
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
             jvmTarget = "17"
         }
     }
 
-    // Pin AGP version across all subprojects for consistency
+    // ── Pin AGP version across all subprojects ──
     project.configurations.all {
         resolutionStrategy.eachDependency { details ->
             if (details.requested.group == 'com.android.tools.build' && details.requested.name == 'gradle') {
-                details.useVersion '8.5.0'
+                details.useVersion '8.7.3'
             }
         }
     }
