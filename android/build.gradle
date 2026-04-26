@@ -11,7 +11,7 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 
-subprojects {
+allprojects {
     afterEvaluate { project ->
         if (project.hasProperty('android')) {
             project.android {
@@ -28,12 +28,18 @@ subprojects {
             }
         }
     }
+}
 
+subprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
             freeCompilerArgs += ["-Xskip-prerelease-check", "-Xallow-jvm-ir-dependencies", "-Xno-call-assertions", "-Xno-param-assertions"]
             jvmTarget = "17"
         }
+    }
+    tasks.withType(JavaCompile).configureEach {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
