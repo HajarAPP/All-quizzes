@@ -31,6 +31,7 @@ subprojects {
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
+            freeCompilerArgs += ["-Xskip-prerelease-check", "-Xallow-jvm-ir-dependencies", "-Xno-call-assertions", "-Xno-param-assertions"]
             jvmTarget = "17"
         }
     }
