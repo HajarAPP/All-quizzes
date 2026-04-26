@@ -39,7 +39,7 @@ dependencies:
   # ── Original Dependencies ──
   animate_do: ^2.0.0
   smooth_page_indicator: ^1.1.0
-  nb_utils: 7.1.0
+  nb_utils: ^7.2.0
   sqflite: ^2.4.1
   dots_indicator: ^2.0.0
   flutter_svg: 2.0.10+1
